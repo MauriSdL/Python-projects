@@ -1,23 +1,12 @@
 import os
 os.system("clear")
 
-''' Sintaxe label (Rótulo)
-
-label = label (janela, width=20,,height=2 text="olá")
-label.place(x=10, y=10)
-x seria o deslocamento na horizontal(coluna)
-y seria o deslocamento na vertical(linha)
-width=> largura
-height=> altura
-text=> Texto que ira aparecer ex: Digite o seu nome:
-font=(Arial 15 bold)=> font define o estilo de letra, Arial sempre inicie com a primeira letra em Maiusculo, 15 tTamanho da font, bold é negrito
-fg ou foreground=> é a cor da letra
-bg ou background=> é a cor de fundo
-
-# Propriedade do grid
-row = linha
-column = coluna
-pady = é o afastamento tipo o padding do css
+''' Sintaxe grid() (Rede)
+O grid() coloca os widgts em uma grade semelhante a uma tabela
+    row(fileira) = são as linhas de uma tabela
+    colunm(coluna) = são as colunas de uma tabela
+label = label (janela, widgth=20, text="Olhá Mundo!")
+label.grid(row=0, column=1)
 '''
 
 from tkinter import *
