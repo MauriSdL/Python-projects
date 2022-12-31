@@ -4,13 +4,12 @@ os.system("clear")
 
 ''' Sintaxe place() (Lugar ou colocar)
 
-O place() usa cordenadas absolutas em pixes
-O place() coloca os widgts em um dos quatro lados
-Novos widgts são colocados ao lado de widgts ja existentes
+O place() Usa Cordenadas Absolutas(Em pixes), Sua Referencia, Para as medidas de x (horizontal) e y (vertical) tem como Referencia o canto Superior Esquerdo da Tela, Esse seria o valor zero(0) da tela.
+
+    Novos widgts são colocados ao lado direito de widgts ja existentes
+
 label = label (janela, width=20, text="Olá Mundo!" )
 label.place(x=10, y=10)
-# x deslocamento na horizontal, y deslocamento na vertical
-
 '''
 
 from tkinter import *
@@ -44,5 +43,3 @@ Label_Pais.place(x=135, y=160)
 
 
 janela.mainloop()
-
-
