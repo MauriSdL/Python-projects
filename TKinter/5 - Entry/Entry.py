@@ -49,63 +49,95 @@ Copy code
 widget.pack(anchor="N", fill="x", expand=True)
 O anchor é uma ferramenta útil para controlar o alinhamento de widgets em uma janela ou em outro widget
 
+delete(0, END) => serve para apagar os campos dos entry, 0 é o começo e END é ate o fim OBS:sempre será esses valores 0 e END.
+
+state='disable' => Desativa uma caixa de Entry
+
 '''
 
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 janela = Tk()
 janela.title("Entry")
-janela.geometry('340x360')
+janela.geometry('450x350')
+janela.resizable(False, False)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+def obterDadosEntry():
+    #Obtem os valores de Entry
+    nome = entry_Nome.get()
+    idade = entry_Idade.get()
+    pais = entry_Pais.get()
+
+    # Subistitui o valor vazio de text dos label resposta pelos valores das variaveis acima nome iidade pais 
+    nomeRes['text'] = nome
+    idadeRes['text'] = idade
+    paisRes['text'] = pais
+
+    # Limpa os valores dos Entry
+    # # 0(zero) é o inicio
+    # END é o final
+    entry_Nome.delete(0, END)
+    entry_Idade.delete(0, END)
+    entry_Pais.delete(0, END)
+
+
 
 
 # Titulo xxxxxxxxxxxxxxxxxxxx
 label_Formulario = Label(janela, text="Mini Formulário", font="Arial 15 bold")
-label_Formulario.place(x=100, y=30)
+label_Formulario.grid(row=0, column=1, pady=25)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 # Nome xxxxxxxxxxxxxxxxxxxx
-label_Nome = Label (janela, text="Nome: ")
-label_Nome.place(x=35, y=90)
-# Nome Entry
-entry_Nome = Entry(janela, width=25)
-entry_Nome.place(x=90, y=90)
+label_Nome = Label (janela, text="Nome:")
+label_Nome.grid(row=1, column=0, pady=10)
+# Entry Nome
+entry_Nome = Entry(janela, width=25, state='disable')
+entry_Nome.grid(row=1, column=1)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 # Idade xxxxxxxxxxxxxxxxxxxx
-label_Idade = Label(janela, text="Idade: ")
-label_Idade.place(x=35, y=120)
-# Idade Entry
+label_Idade = Label(janela, text="Idade:")
+label_Idade.grid(row=2, column=0, pady=10)
+# Entry Idade
 entry_Idade = Entry(janela, width=25)
-entry_Idade.place(x=90, y=120)
+entry_Idade.grid(row=2, column=1)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 # Pais xxxxxxxxxxxxxxxxxxxx
-label_Pais = Label(janela, text="Pais: ")
-label_Pais.place(x=35, y=150)
-# Pais Entry
+label_Pais = Label(janela, text="Pais:")
+label_Pais.grid(row=3, column=0, padx=5, pady=10)
+# Entry Pais
 entry_Pais = Entry(janela, width=25)
-entry_Pais.place(x=90, y=150)
+entry_Pais.grid(row=3, column=1)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 
 
 # Resposta xxxxxxxxxxxxxxxxxxxx
-resNome = Label (janela, text="Nome: ")
-resNome.pack(side=LEFT)
+nomeRes = Label (janela, text="")
+nomeRes.grid(row=4, column=0,padx=10, pady=30)
 
-resIdade = Label(janela, text="Idade: ")
-resIdade.pack(side=LEFT)
+idadeRes = Label(janela, text="")
+idadeRes.grid(row=4, column=1, pady=30)
 
-resPais = Label(janela, text="Pais: ")
-resPais.pack(side=LEFT)
+paisRes = Label(janela, text="")
+paisRes.grid(row=4, column=2, pady=30)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 
 
 # Button xxxxxxxxxxxxxxxxxxxx
-button = Button(janela, text="Verificar Dados", width=22, height=1)
-button.place(x=75, y=300)
+button = Button(janela, command=obterDadosEntry , text="Verificar Dados", width=22, height=1)
+button.grid(row=5, column=1, pady=10)
 # xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
 janela.mainloop()
