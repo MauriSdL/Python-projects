@@ -10,7 +10,7 @@ y seria o deslocamento na vertical(linha)
 width=> largura
 height=> altura
 text=> Texto que ira aparecer ex: Digite o seu nome:
-font=(Arial 15 bold)=> font define o estilo de letra, Arial sempre inicie com a primeira letra em Maiusculo, 15 tTamanho da font, bold é negrito
+font=(Arial 15 bold)=> font define o estilo de letra, Arial sempre inicie com a primeira letra em Maiusculo, 15 Tamanho da font, bold é negrito
 fg ou foreground=> é a cor da letra
 bg ou background=> é a cor de fundo
 
